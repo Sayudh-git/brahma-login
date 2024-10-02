@@ -5,6 +5,11 @@ import { Logo } from '@/components/Logo';
 import Link from 'next/link';
 import { useState } from 'react';
 import ProgressSlider from '@/components/progressslider';
+import progress from '@/images/progress.png';
+import p1 from '@/images/p1.png';
+import p2 from '@/images/p2.png';
+import p3 from '@/images/p3.png';
+
 
 // Import necessary icons
 import BackgroundGradientAnimation from "@/components/example/background-gradient-animation-demo"; 
@@ -12,23 +17,28 @@ import BackgroundGradientAnimation from "@/components/example/background-gradien
 // Placeholder items for ProgressSlider
 const items = [
   {
-    img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Example image from Unsplash
-    desc: "Feature 1",
-    buttonIcon: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Example icon
+    img: progress,
+    title: "Creating a Console",
+    desc: "Setup Tutorial",
+    buttonIcon: p1,
+    
     width: 1024,
     height: 576,
   },
   {
-    img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Different Unsplash image
-    desc: "Feature 2",
-    buttonIcon: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Different icon
+    img: progress,
+    title: "Console is fully self custodial.",
+    desc: "Built on Safe",
+    buttonIcon: p2,
+    
     width: 1024,
     height: 576,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Another image
-    desc: "Feature 3",
-    buttonIcon: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Another icon
+  },{
+    img: progress,
+    title: "Console’s features & more.",
+    desc: "Docs",
+    buttonIcon: p3,
+    
     width: 1024,
     height: 576,
   },

@@ -3,8 +3,15 @@
 import { PrivyProvider, usePrivy } from '@privy-io/react-auth';
 import { Logo } from '@/components/Logo';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import ProgressSlider from '@/components/progressslider';
+import slider from '@/images/slider.jpg';
+import progress from '@/images/progress.png';
+import p1 from '@/images/p1.png';
+import p2 from '@/images/p2.png';
+import p3 from '@/images/p3.png';
+
 
 // Import necessary icons
 import BackgroundGradientAnimation from "@/components/example/background-gradient-animation-demo"; 
@@ -12,23 +19,28 @@ import BackgroundGradientAnimation from "@/components/example/background-gradien
 // Placeholder items for ProgressSlider
 const items = [
   {
-    img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Example image from Unsplash
-    desc: "Feature 1",
-    buttonIcon: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Example icon
+    img: progress,
+    title: "Creating a Console",
+    desc: "Setup Tutorial",
+    buttonIcon: p1,
+    
     width: 1024,
     height: 576,
   },
   {
-    img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Different Unsplash image
-    desc: "Feature 2",
-    buttonIcon: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Different icon
+    img: progress,
+    title: "Console is fully self custodial.",
+    desc: "Built on Safe",
+    buttonIcon: p2,
+    
     width: 1024,
     height: 576,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Another image
-    desc: "Feature 3",
-    buttonIcon: "https://images.unsplash.com/photo-1543248939-4296e1fea89b?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Another icon
+  },{
+    img: progress,
+    title: "Console’s features & more.",
+    desc: "Docs",
+    buttonIcon: p3,
+    
     width: 1024,
     height: 576,
   },
@@ -96,29 +108,57 @@ function SignInComponent() {
               Welcome to Console. The complete on chain execution and custody environment.
             </h2>
 
-            {/* Stacked Logos */}
-            <div className="isolate flex -space-x-1 overflow-hidden mb-4 py-4 px-1">
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                className="relative z-30 inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              />
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                className="relative z-20 inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              />
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
-                className="relative z-10 inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              />
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                className="relative z-0 inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              />
-            </div>
+            <div className="isolate flex -space-x-[12px] overflow-hidden mb-4 py-4 px-1">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="#18181C"/>
+<rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"/>
+<circle cx="17.9999" cy="17.9999" r="12.6" fill="#627EEA"/>
+<g clip-path="url(#clip0_6_276)">
+<path d="M18.2349 8.5498V15.5349L24.1388 18.1731L18.2349 8.5498Z" fill="white" fill-opacity="0.602"/>
+<path d="M18.2343 8.5498L12.3296 18.1731L18.2343 15.5349V8.5498Z" fill="white"/>
+<path d="M18.2349 22.6997V27.4459L24.1427 19.2725L18.2349 22.6997Z" fill="white" fill-opacity="0.602"/>
+<path d="M18.2343 27.4459V22.6989L12.3296 19.2725L18.2343 27.4459Z" fill="white"/>
+<path d="M18.2349 21.6012L24.1388 18.1732L18.2349 15.5366V21.6012Z" fill="white" fill-opacity="0.2"/>
+<path d="M12.3296 18.1732L18.2343 21.6012V15.5366L12.3296 18.1732Z" fill="white" fill-opacity="0.602"/>
+</g>
+<defs>
+<clipPath id="clip0_6_276">
+<rect width="11.8125" height="18.8961" fill="white" transform="translate(12.3296 8.5498)"/>
+</clipPath>
+</defs>
+</svg>
+
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="#18181C"/>
+<rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"/>
+<g clip-path="url(#clip0_6_277)">
+<path d="M7.6748 13.0607V22.9391C7.6748 23.5741 8.00744 24.1487 8.56184 24.4713L17.1198 29.4105C17.6641 29.7229 18.3394 29.7229 18.8838 29.4105L27.4417 24.4713C27.986 24.1588 28.3287 23.5741 28.3287 22.9391V13.0607C28.3287 12.4257 27.9961 11.8511 27.4417 11.5285L18.8838 6.58934C18.3394 6.27686 17.6641 6.27686 17.1198 6.58934L8.56184 11.5285C8.01752 11.841 7.68488 12.4257 7.68488 13.0607H7.6748Z" fill="#213147"/>
+<path d="M19.8625 19.9149L18.6428 23.2614C18.6126 23.3522 18.6126 23.453 18.6428 23.5538L20.7394 29.3094L23.1687 27.9083L20.2556 19.9149C20.185 19.7334 19.933 19.7334 19.8625 19.9149Z" fill="#12AAFF"/>
+<path d="M22.3127 14.2904C22.2422 14.1089 21.9902 14.1089 21.9196 14.2904L20.6999 17.6369C20.6697 17.7277 20.6697 17.8285 20.6999 17.9293L24.1372 27.3541L26.5665 25.9529L22.3127 14.3005V14.2904Z" fill="#12AAFF"/>
+<path d="M17.9953 6.9623C18.0558 6.9623 18.1163 6.98246 18.1667 7.0127L27.4201 12.3551C27.531 12.4156 27.5915 12.5365 27.5915 12.6575V23.3423C27.5915 23.4633 27.5209 23.5842 27.4201 23.6447L18.1667 28.9871C18.1163 29.0173 18.0558 29.0375 17.9953 29.0375C17.9348 29.0375 17.8743 29.0173 17.8239 28.9871L8.5705 23.6447C8.45962 23.5842 8.39914 23.4633 8.39914 23.3423V12.6474C8.39914 12.5265 8.4697 12.4055 8.5705 12.345L17.8239 7.00262C17.8743 6.97238 17.9348 6.95222 17.9953 6.95222V6.9623ZM17.9953 5.3999C17.6627 5.3999 17.3401 5.48054 17.0377 5.6519L7.78426 10.9943C7.18954 11.337 6.82666 11.962 6.82666 12.6474V23.3322C6.82666 24.0177 7.18954 24.6426 7.78426 24.9853L17.0377 30.3277C17.33 30.4991 17.6627 30.5797 17.9953 30.5797C18.3279 30.5797 18.6505 30.4991 18.9529 30.3277L28.2063 24.9853C28.8011 24.6426 29.1639 24.0177 29.1639 23.3322V12.6474C29.1639 11.962 28.8011 11.337 28.2063 10.9943L18.9428 5.6519C18.6505 5.48054 18.3179 5.3999 17.9852 5.3999H17.9953Z" fill="#9DCCED"/>
+<path d="M11.8682 27.3644L12.725 25.0259L14.4386 26.4472L12.8358 27.9188L11.8682 27.3644Z" fill="#213147"/>
+<path d="M17.2126 11.8914H14.864C14.6926 11.8914 14.5313 12.0023 14.4708 12.1636L9.44092 25.953L11.8702 27.3541L17.4142 12.1636C17.4646 12.0225 17.3638 11.8813 17.2227 11.8813L17.2126 11.8914Z" fill="white"/>
+<path d="M21.3253 11.8914H18.9766C18.8053 11.8914 18.644 12.0023 18.5835 12.1636L12.8379 27.9085L15.2672 29.3097L21.5168 12.1636C21.5672 12.0225 21.4664 11.8813 21.3253 11.8813V11.8914Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_6_277">
+<rect width="25.2" height="25.2" fill="white" transform="translate(5.3999 5.3999)"/>
+</clipPath>
+</defs>
+</svg>
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="black"></rect><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"></rect><path d="M9.70449 9.60001L5.38306 12.7267H26.9266L25.6777 16.316H17.0902L16.2987 18.9369H24.8144L23.4473 23.2015H11.4472L13.9192 15.3772L11.1647 13.3044L6.94542 26.4H22.5273L26.6336 24.3314L27.9453 19.856L25.3082 17.9025L29.3127 15.9003L30.6165 11.6223L27.9286 9.6004L9.70449 9.60001Z" fill="#F8FC53"></path></svg>
+
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="black"></rect><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M30.5226 18C30.5226 24.9035 24.9147 30.5 17.9969 30.5C11.4338 30.5 6.04962 25.4626 5.51489 19.0507H22.071V16.9493H5.51489C6.04962 10.5374 11.4338 5.49998 17.9969 5.49998C24.9147 5.49998 30.5226 11.0964 30.5226 18Z" fill="#3145FF"></path></svg>
+
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="black"></rect><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"></rect><g clip-path="url(#___SVG_ID__4__0___)"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.306 18.1686C31.306 10.8969 25.409 4.99991 18.1372 4.99991C10.8655 4.99991 4.96851 10.8969 4.96851 18.1686C4.96851 25.4404 10.8655 31.3374 18.1372 31.3374C25.409 31.3374 31.306 25.4404 31.306 18.1686ZM18.6376 18.4979L20.8395 12.298H24.3924V23.1253H22.0088V17.7314L22.9623 14.6526L22.2827 14.4103L19.1855 23.1253H17.3682L14.2709 14.4103L13.5914 14.6526L14.5422 17.7314V23.1253H12.1586V12.298H15.7142L17.916 18.4979V20.3178H18.6376V18.4979Z" fill="#DFFE00"></path></g><defs><clipPath id="___SVG_ID__4__0___"><rect width="26.3374" height="26.3374" fill="white" transform="translate(4.96851 5)"></rect></clipPath></defs></svg>
+
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="black"></rect><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"></rect><g clip-path="url(#___SVG_ID__5__0___)"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.9393 30C21.495 30 24.6897 28.4534 26.8871 25.9962C25.8649 25.1079 24.3244 25.0539 23.2362 25.932L23.0283 26.0997C21.0359 27.7075 18.1326 27.4701 16.4278 25.56C15.498 24.5182 13.9056 24.4118 12.8455 25.3206L10.4486 27.3756C12.5016 29.0179 15.1057 30 17.9393 30ZM21.83 24.1893C23.7278 22.6579 26.3953 22.7128 28.2205 24.1918C29.3115 22.3841 29.9392 20.2654 29.9392 18C29.9392 15.4828 29.1642 13.1466 27.8398 11.2171C26.9859 11.0353 26.0604 11.2477 25.3579 11.8702L25.158 12.0474C23.2418 13.7454 20.3307 13.6422 18.5395 11.8128C17.5627 10.8151 15.9671 10.7823 14.95 11.7391L12.1607 14.3633L10.6263 12.7323L13.4156 10.1081C15.3207 8.31579 18.3097 8.37717 20.1397 10.2462C21.0958 11.2228 22.6499 11.2779 23.6728 10.3714L23.8727 10.1942C24.4937 9.64399 25.212 9.27305 25.9642 9.07796C23.8382 7.16449 21.0247 6 17.9393 6C11.8476 6 6.81607 10.5391 6.04239 16.4195C7.89267 15.5316 10.175 15.8733 11.6836 17.4182C12.636 18.3935 14.1696 18.4964 15.2438 17.6572L16.8033 16.4388C18.7634 14.9076 21.5341 14.9817 23.4094 16.6155L26.4457 19.2609L24.9747 20.9493L21.9384 18.304C20.8721 17.3749 19.2966 17.3327 18.182 18.2034L16.6225 19.4219C14.6488 20.9638 11.8313 20.7747 10.0815 18.9827C9.06394 17.9407 7.39978 17.9044 6.33773 18.901L6.00024 19.2177C6.25281 21.724 7.27664 24.0028 8.83079 25.8129L11.388 23.6206C13.3738 21.9181 16.3568 22.1173 18.0985 24.0688C19.0086 25.0885 20.5585 25.2152 21.6221 24.357L21.83 24.1893Z" fill="#B3272C"></path></g><defs><clipPath id="___SVG_ID__5__0___"><rect width="23.939" height="24" fill="white" transform="translate(6.00024 6)"></rect></clipPath></defs></svg>
+
+<svg   width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" fill="black"></rect><rect x="1.35" y="1.35" width="33.3" height="33.3" rx="16.65" stroke="#494C56" stroke-width="1.3"></rect><path d="M27.7734 21.8086V8.51961C27.7557 7.40767 26.8909 6.5127 25.8055 6.5127H12.2684C9.34737 6.5579 7 9.00778 7 12.0091C7 13.0216 7.26474 13.8895 7.67068 14.6488C8.01484 15.2816 8.55315 15.8783 9.08263 16.3213C9.23265 16.4478 9.16206 16.3936 9.62094 16.6829C10.2563 17.0806 10.9799 17.2795 10.9799 17.2795L10.9711 25.2258C10.9888 25.6055 11.0241 25.9671 11.1211 26.3016C11.4212 27.4226 12.1801 28.2814 13.2126 28.6972C13.645 28.869 14.1304 28.9865 14.651 28.9956L25.4613 29.0317C27.6145 29.0317 29.3618 27.2418 29.3618 25.0269C29.3706 23.7161 28.7353 22.5409 27.7734 21.8086Z" fill="#FFEEDA"></path><path d="M28.038 25.1264C27.9939 26.5457 26.8555 27.6847 25.4612 27.6847L18.022 27.6576C18.6132 26.9525 18.975 26.0394 18.975 25.045C18.975 23.4811 18.0661 22.4053 18.0661 22.4053H25.47C26.8908 22.4053 28.0468 23.5895 28.0468 25.045L28.038 25.1264Z" fill="#EBC28E"></path><path d="M9.78861 15.2003C8.93261 14.3686 8.33253 13.2929 8.33253 12.0182V11.8826C8.40313 9.70392 10.1504 7.95013 12.2772 7.88685H25.8143C26.1673 7.90493 26.4497 8.15806 26.4497 8.5287V20.2628C26.7585 20.3171 26.9085 20.3623 27.2086 20.4708C27.4469 20.5612 27.7734 20.751 27.7734 20.751V8.5287C27.7557 7.41676 26.8909 6.52179 25.8055 6.52179H12.2684C9.34737 6.56699 7 9.01687 7 12.0182C7 13.7629 7.77658 15.2546 9.04733 16.3032C9.13558 16.3756 9.215 16.466 9.44445 16.466C9.84156 16.466 10.124 16.1405 10.1063 15.7879C10.0975 15.4896 9.97393 15.3811 9.78861 15.2003Z" fill="#101010"></path><path d="M25.4611 21.0312H14.845C14.1302 21.0402 13.5565 21.6279 13.5565 22.3601V23.924C13.5742 24.6473 14.1743 25.262 14.8891 25.262H15.6745V23.924H14.8891V22.3963C14.8891 22.3963 15.0832 22.3963 15.3215 22.3963C16.6628 22.3963 17.6513 23.6709 17.6513 25.036C17.6513 26.2474 16.5746 27.7932 14.7744 27.6667C13.1771 27.5582 12.3123 26.1027 12.3123 25.036V11.7831C12.3123 11.1865 11.8357 10.6983 11.2533 10.6983H10.1943V12.0543H10.9797V25.045C10.9356 27.6848 12.8153 29.0137 14.7744 29.0137L25.47 29.0498C27.6232 29.0498 29.3705 27.2599 29.3705 25.045C29.3705 22.8302 27.6144 21.0312 25.4611 21.0312ZM28.0379 25.1264C27.9938 26.5457 26.8554 27.6848 25.4611 27.6848L18.0219 27.6576C18.6132 26.9525 18.975 26.0394 18.975 25.045C18.975 23.4811 18.066 22.4053 18.066 22.4053H25.47C26.8907 22.4053 28.0468 23.5896 28.0468 25.045L28.0379 25.1264Z" fill="#101010"></path><path d="M22.6017 12.2986H14.5977V10.9426H22.6017C22.9635 10.9426 23.2636 11.2409 23.2636 11.6206C23.2636 11.9912 22.9724 12.2986 22.6017 12.2986Z" fill="#101010"></path><path d="M22.6017 18.6807H14.5977V17.3246H22.6017C22.9635 17.3246 23.2636 17.623 23.2636 18.0027C23.2636 18.3733 22.9724 18.6807 22.6017 18.6807Z" fill="#101010"></path><path d="M24.0137 15.4896H14.5977V14.1336H24.0048C24.3667 14.1336 24.6667 14.4319 24.6667 14.8116C24.6755 15.1823 24.3755 15.4896 24.0137 15.4896Z" fill="#101010"></path></svg>
+
+
+</div>
+
 
             {/* Login to Console Button */}
             <div className="flex items-center justify-between bg-[#B2F8FF] text-black p-3 rounded-lg mb-4 w-[27rem]">
