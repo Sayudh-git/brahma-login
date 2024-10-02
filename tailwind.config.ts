@@ -17,7 +17,7 @@ const config = {
   prefix: "",
   theme: {
   	container: {
-  		center: 'true',
+  		center: true,
   		padding: '2rem',
   		screens: {
   			'2xl': '1400px'
@@ -169,10 +169,10 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     // Plugin to add bg-dot utilities
-    function ({ matchUtilities, theme }) {
+    function ({ matchUtilities, theme }: { matchUtilities: any; theme: any }) { // Generic typing provided here
       matchUtilities(
         {
-          'bg-dot': (value) => ({
+          'bg-dot': (value: string) => ({
             backgroundImage: `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
             )}")`,
@@ -182,6 +182,6 @@ const config = {
       );
     },
   ],
-} satisfies Config;
+};
 
 export default config;
